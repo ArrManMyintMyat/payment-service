@@ -45,7 +45,7 @@ jobs:
         run: |
           docker build \
             -f deployment/Dockerfile.dev \
-            -t ghcr.io/zawthanoo/payment-service:${{ steps.tag-version.outputs.version }} \
+            -t ghcr.io/ArrManMyintMyat/payment-service:${{ steps.tag-version.outputs.version }} \
             .
 
       - name: Push Docker Image
@@ -54,7 +54,7 @@ jobs:
       - name: Checkout Kustomize chart Repository
         uses: actions/checkout@v4
         with:
-          repository: zawthanoo/workshop-apps
+          repository: ArrManMyintMyat/workshop-apps
           path: deployment
           token: ${{ secrets.MY_GITHUB_TOKEN }}
 
